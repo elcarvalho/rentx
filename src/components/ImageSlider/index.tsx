@@ -25,12 +25,15 @@ export function ImageSlider({ imagesUrl }: Props) {
     const index = info.viewableItems[0].index!;
     setImageIndex(index);
   });
-  
+
   return (
     <Container>
       <ImageIndexes>
         {imagesUrl.map((_, index) => (
-          <ImageIndex active={index === imageIndex}></ImageIndex>
+          <ImageIndex
+            key={String(index)}
+            active={index === imageIndex}
+          ></ImageIndex>
         ))}
       </ImageIndexes>
 
